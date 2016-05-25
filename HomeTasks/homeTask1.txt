@@ -1,0 +1,79 @@
+Topic:
+
+    1. Selenium gradations
+            Selenium IDE
+            Selenium Remote Control 1.0
+            Selenium Web Driver 2.0
+            Selenium Server
+            Selenium Grid2
+
+    2. Record tests used by Selenium IDE(look at SeleniumIDE code tab)
+
+    3. Generating WebDriver/JUnit test from Selenium IDE
+
+    4. Locators:
+        - simples:
+            id;
+            class;
+            link;
+            name;
+        - CssSelectors:
+            Elements:
+                *
+                div
+                div#myid
+                div.class
+            Attributes:
+                div[foo='bar'] - full match
+                div[foo~='bar'] - contains word (example: <div foo='restaurant and bar'></div> )
+                div[foo^='b'] - begins with 'b'
+                div[foo$='r'] - ends with 'r'
+                div[foo*='a'] - contains 'a'
+            Attitude between the elements:
+                div a - all descendants
+                div > a - immediate descendants
+                div + a - element by element directly
+                div ~ a - element by element
+        - Xpath:
+            Elements:
+                / - descend by one point from the root
+                /* - all
+                . - selection of the current item
+                /.. - select the parent
+                // - an indefinite descent
+            Attributes:
+                div[@foo='bar']
+                div[@foo='bar' and @doo='restaurant']
+            Attitude between the elements and filters:
+                //a[text()='same value]
+                //*[1]
+                //div[@foo='bar']//span[@foo='zoo']
+                //div[@foo='bar']/a/span[@foo='zoo']
+                //div[@foo='bar']/a[4]/span[@foo='zoo']
+
+
+Home tasks:
+
+1. Write 50 locators for the ellos.se, using next types of locators (xpath, cssSelectors, - try to use each of them).
+For xpath and cssSelectors use Attributes and Attitude between the elements and filters.
+(look at formatForLocators)
+
+Dead line - 30.05
+
+2. Watch the lecture materials
+
+
+Read / watch
+
+    HTML online course https://www.codecademy.com/tracks/web
+
+    Locators tutorial - https://www.youtube.com/watch?v=ahhaMbjqrxM
+    CssSelectors tutorial - http://www.w3schools.com/cssref/trysel.asp
+    Xpath tutorial - https://msdn.microsoft.com/en-us/library/ms256086%28v=vs.110%29.aspx
+    Poster-crib for locators - https://www.simple-talk.com/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/
+
+    Locators map - https://drive.google.com/file/d/0Bzh6QHLIFmHreTZ4WGE0LUtkNVE/view?usp=sharing
+
+Youtube:
+part1 - https://www.youtube.com/watch?v=JPiB_c-NY0E&feature=youtu.be
+part2 - https://www.youtube.com/watch?v=pymn0MA3L-4&feature=youtu.be

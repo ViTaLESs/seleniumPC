@@ -1,0 +1,43 @@
+Topic:
+
+    1. Generating WebDriver/JUnit test from Selenium IDE
+    2. Basic commands Selenium WD
+    3. Writing the first simple test
+
+	
+Home tasks:
+
+1. Write 50 locators for the ellos.se, using next types of locators (xpath, cssSelectors, - try to use each of them).
+For xpath and cssSelectors use Attributes and Attitude between the elements and filters.
+(look at formatForLocators)
+
+Dead line - 30.05
+
+2. Watch the lecture materials
+
+3.1 Add positive test
+3.2 Add 2 tests for login field validation
+
+
+Read / watch
+
+    HTML online course https://www.codecademy.com/tracks/web
+
+    Locators tutorial - https://www.youtube.com/watch?v=ahhaMbjqrxM
+    CssSelectors tutorial - http://www.w3schools.com/cssref/trysel.asp
+    Xpath tutorial - https://msdn.microsoft.com/en-us/library/ms256086%28v=vs.110%29.aspx
+    Poster-crib for locators - https://www.simple-talk.com/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/
+
+    Locators map - https://drive.google.com/file/d/0Bzh6QHLIFmHreTZ4WGE0LUtkNVE/view?usp=sharing
+    Basic methods Selenium WebDriver map - https://drive.google.com/open?id=0Bzh6QHLIFmHrUmhLLU1zeFF6QlU
+
+    Description of classes Selenium WD - http://selenium.googlecode.com/git/docs/api/java/index.html
+
+    Best of the best - selenium-server-standalone-2.53.0 src (ctrl + click)
+	
+	
+Youtube:
+https://www.youtube.com/watch?v=wz6RXIVvJ0k&index=3&list=PLgj6seah2f6gfyK71ipUN0nBYJgBGVNyX
+
+
+
