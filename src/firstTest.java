@@ -1,11 +1,9 @@
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 
@@ -13,56 +11,64 @@ import java.util.concurrent.TimeUnit;
 public class firstTest {
     private static WebDriver driver;
     private String baseUrl = "http://www.ellos.se/";
-
+    static WebElementsActions web;
 
     @BeforeClass
     public static void setUp() throws Exception {
         driver = new FirefoxDriver();
+        web = new WebElementsActions(driver);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Test
-    public void testForLoginEmptyFieldsValidationError() throws Exception {
-        driver.get(baseUrl);
-        driver.navigate().refresh();
-        driver.findElement(By.cssSelector("a.ellos.active")).click();
+    //@Test
+    public void Before_testPositiveLogin() throws Exception {
+        web.openPage(baseUrl);
+        web.refreshPage();
 
-        driver.findElement(By.xpath(".//a[@id='showlogin']/span")).click();
-        driver.findElement(By.xpath(".//a[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginButton']")).click();
+        web.clickLink(".//a[@id='showlogin']/span");
 
-        System.out.println(isElementPresent(By.xpath(".//div[@id='ctl00_ctl00_conMain_conMain_LoginControl_pnl' and @class='boxFrameError']")));
+        web.input(".//input[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginUsername']", "ellostest@mailinator.com");
+        web.clickElement(".//input[@id='LoginPasswordText']");
+        web.input(".//input[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginPassword']", "ellostest");
+
+        web.clickButton(".//a[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginButton']");
+
+        System.out.println(web.isElementPresent(".//a[@id='showlogout']"));
     }
 
     @Test
-    public void testForLoginEmptyFieldsValidationError1() throws Exception {
-        driver.get(baseUrl);
-        driver.navigate().refresh();
-        driver.findElement(By.cssSelector("a.ellos.active")).click();
+    public void After_testPositiveLogin() throws Exception {
+        web.openPage(baseUrl);
+        web.refreshPage();
 
-        driver.findElement(By.xpath(".//a[@id='showlogin']/span")).click();
-        driver.findElement(By.xpath(".//a[@id='ctl00_ctl00_conMain_conMain_LoginControl_LoginButton']")).click();
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickLoginLink();
 
-        System.out.println(isElementPresent(By.xpath(".//div[@id='ctl00_ctl00_conMain_conMain_LoginControl_pnl' and @class='boxFrameError']")));
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.fillLoginForm("ellostest@mailinator.com", "ellostest");
+        loginPage.confirmLoginForm();
+
+        /*loginPage.switchToMainPage();
+
+        ProductPage productPage = new ProductPage(driver);
+        productPage.openStandartProduct();
+        productPage.chooseColor();
+        productPage.selectSize();
+
+        productPage.addToBasket();
+        productPage.swithcToCheckoutPage();
+
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+        checkoutPage.confirmOrder();*/
+
+        System.out.println(web.isElementPresent(".//a[@id='showlogout']"));
     }
 
-    //
-    //HW =>>    1)Add positive test
-    //          2)Add 2 methods for login field validation
-    //
 
 
     @AfterClass
     public static void tearDown() throws Exception {
         driver.quit();
-    }
-
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by).isDisplayed();
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
     }
 
 
