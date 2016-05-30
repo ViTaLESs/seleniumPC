@@ -1,4 +1,9 @@
+package pages;
+
 import org.openqa.selenium.WebDriver;
+import utils.WebElementsActions;
+
+import java.io.IOException;
 
 /**
  * Created by ViTaLES on 27.05.2016.
@@ -11,13 +16,8 @@ public class MainPage {
         web = new WebElementsActions(driver);
     }
 
-    public void clickLoginLink() {
-        web.clickLink(".//a[@id='showlogin']/span");
+    public void clickLoginLink() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
+        web.clickLink("LoginLink");
     }
-
-
-
-
-
 
 }

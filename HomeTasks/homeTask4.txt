@@ -1,0 +1,54 @@
+Week Topics:
+
+    1. Patterns:
+    	- Page Object + Page Factory(class)
+    	- Element object
+
+    2. Created tests with Page Object + Page Factory(class)
+
+    3. Creating UIMapping
+
+    4. Created tests with UIMapping.properties file
+
+	5. Log4j
+		- Logger
+		- Appender
+		- Layout
+		- log4j.properties
+
+
+Home tasks:
+
+1. Put all locators to UIMapping.properties
+2. Add logging to utils.WebElementsActions class and rewrite all methods using utils.ConfigData.ui method
+3. Refactor utils.ConfigData class (do better as you can)
+4. Prepare story about Exception
+5. Fix bug in positiveLogin method
+
+        *All the tasks must be done.
+        *It's necessary for your continued participation in the course.
+
+
+Read / watch
+
+    Patterns:
+	http://www.seleniumhq.org/docs/06_test_design_considerations.jsp#page-object-design-pattern
+    https://kreisfahrer.gitbooks.io/selenium-webdriver/content/page_object_pattern_arhitektura_testovogo_proekta/ispolzovanie_patterna_page_object.html
+    http://internetka.in.ua/selenium-page-object/
+    https://code.google.com/p/selenium/wiki/PageObjects
+    https://code.google.com/p/selenium/wiki/PageFactory
+    http://www.seleniumhq.org/docs/06_test_design_considerations.jsp
+    http://autoqa.org/advanced-webdriver/patterns-page-object-model-pom-selenium.html
+
+	Logging:
+	http://logging.apache.org/log4j/2.x/
+	https://www.youtube.com/watch?v=lepwubmYGQc&list=PLoij6udfBncgmth0XgJlGRpEomKV-lp7U/
+	http://www.quizful.net/post/log4j-quickstart/
+	http://www.log4j.ru/
+
+
+Page Object Design Pattern map - https://drive.google.com/file/d/0Bzh6QHLIFmHrMEthWGpPWFV6SHc/view?usp=sharing
+Logging map - https://drive.google.com/file/d/0Bzh6QHLIFmHrWTUwSDY1cVMxbW8/view?usp=sharing
+
+Youtube:
+https://youtu.be/4STCj4rOs-U

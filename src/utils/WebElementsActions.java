@@ -1,8 +1,12 @@
+package utils;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -13,6 +17,7 @@ public class WebElementsActions {
 
     private WebDriver driver;
     private static WebDriverWait waitForElement;
+    private static final Logger log = Logger.getLogger(WebElementsActions.class);
 
 
     public WebElementsActions(WebDriver driver) {
@@ -31,46 +36,48 @@ public class WebElementsActions {
     /**
      * Click a button
      */
-    public void clickButton(String buttonLocator) {
-        driver.findElement(By.xpath(buttonLocator)).click();
-        //log.info("Click on Button " + buttonLocator);
+    public void clickButton(String buttonLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(buttonLocator)).click();
+        log.info("Click on Button " + buttonLocator);
     }
 
     /**
      * Click link
      */
-    public void clickLink(String linkLocator) {
-        driver.findElement(By.xpath(linkLocator)).click();
-        //log.info("Click on Link " + linkLocator);
+    public void clickLink(String linkLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(linkLocator)).click();
+        log.info("Click on Link " + linkLocator);
     }
 
     /**
      * Insert value into text input HTML field
      */
-    public void input(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).clear();
-        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
-        //log.info("Input in " + inputLocator + ", value - " + inputData);
+    public void input(String inputLocator, String inputData) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).clear();
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(inputData);
+        log.info("Input in " + inputLocator + ", value - " + inputData);
     }
 
     /**
      * Insert value into text input HTML field and Click ENTER for Field which used "Value" in the xpath expression
      */
-    public void inputAndClickEnter(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).clear();
-        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
-        driver.findElement(By.xpath(inputLocator)).sendKeys(Keys.ENTER);
+    public void inputAndClickEnter(String inputLocator, String inputData) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).clear();
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(inputData);
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(Keys.ENTER);
     }
+
     /**
      * Method is used to check that element is present on page.
      */
-    public boolean isElementPresent(String elementLocator) {
-        if (!driver.findElement(By.xpath(elementLocator)).isDisplayed()) {
+    public boolean isElementPresent(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        if (!driver.findElement(ConfigData.ui(elementLocator)).isDisplayed()) {
             return false;
         }
         return true;
     }
 
+    //Haha!
     private boolean isElementPresent(By by) {
         try {
             driver.findElement(by).isDisplayed();
@@ -115,8 +122,8 @@ public class WebElementsActions {
         return alertText;
     }
 
-    public void moveToElementAndClick(String moveToLocator, String clickToElement) {
-        WebElement webElement = driver.findElement(By.xpath(moveToLocator));
+    public void moveToElementAndClick(String moveToLocator, String clickToElement) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        WebElement webElement = driver.findElement(ConfigData.ui(moveToLocator));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(webElement);
@@ -173,7 +180,7 @@ public class WebElementsActions {
             }
             return false;
         } else {
-            //log.info("WebElementsActions Driver: <" + driver + "> cann't execute JavaScript");
+            //log.info("utils.WebElementsActions Driver: <" + driver + "> cann't execute JavaScript");
             return false;
         }
     }
