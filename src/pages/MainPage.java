@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import utils.WebElementsActions;
 
@@ -11,6 +12,7 @@ import java.io.IOException;
 public class MainPage {
 
     WebElementsActions web;
+    private static final Logger log = Logger.getLogger(WebElementsActions.class);
 
     public MainPage(WebDriver driver) {
         web = new WebElementsActions(driver);

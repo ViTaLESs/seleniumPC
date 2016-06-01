@@ -1,5 +1,6 @@
 package tests;
 
+import org.apache.log4j.Logger;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +15,7 @@ public class firstTest {
     private static WebDriver driver;
     private String baseUrl = "http://www.ellos.se/";
     static WebElementsActions web;
+    private static final Logger log = Logger.getLogger(firstTest.class);
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -26,9 +28,11 @@ public class firstTest {
     public void positiveLogin() throws Exception {
         web.openPage(baseUrl);
         web.refreshPage();
-
+        log.info("1");
         MainPage mainPage = new MainPage(driver);
         mainPage.clickLoginLink();
+        log.trace("2");
+        log.debug("3");
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillLoginForm("ellostest@mailinator.com", "ellostest");

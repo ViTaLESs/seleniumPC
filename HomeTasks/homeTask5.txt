@@ -1,0 +1,31 @@
+Week Topics:
+
+    1. Log4j
+		- Logger
+		- Appender
+		- Layout
+		- log4j.properties
+
+    2. Waits
+
+Home tasks:
+
+1. Create tests for login and registration functional
+2. Explore methods in class WebElementsActions
+3. Watch the material in
+        Logging map - https://drive.google.com/file/d/0Bzh6QHLIFmHreTZ4WGE0LUtkNVE/view?usp=sharing
+        Wait map - https://drive.google.com/open?id=0Bzh6QHLIFmHrUmhLLU1zeFF6QlU
+
+
+Read / watch
+
+	Logging:
+	http://logging.apache.org/log4j/2.x/
+	https://www.youtube.com/watch?v=lepwubmYGQc&list=PLoij6udfBncgmth0XgJlGRpEomKV-lp7U/
+	http://www.quizful.net/post/log4j-quickstart/
+	http://www.log4j.ru/
+
+All materials about waits you can find in wait map
+
+Youtube:
+https://youtu.be/yU5w5GRuGyQ

@@ -3,6 +3,7 @@ package utils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -229,6 +230,91 @@ public class WebElementsActions {
     public void selectFromList(String listLocator, String listValue) {
         new Select(driver.findElement(By.xpath(listLocator))).selectByValue(listValue);
     }
+
+    /**
+     * Wait the text in the element value specified time
+     */
+    public void waitTextPresent(WebElement elementLocator, String text) {
+        log.info("*Start TO* Wait For Element _" + elementLocator + "_ Present");
+        waitForElement.until(ExpectedConditions.textToBePresentInElement(elementLocator, text));
+    }
+
+    /**
+     * Wait the text in the element (value tag!) specified time
+     */
+    public void waitTextPresentInElementValue(String elementLocator, int timeoutInS, String text) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInS);
+
+        log.info("*Start TO* Wait For Text Present In Element _" + elementLocator + "_ Value");
+
+        wait.until(ExpectedConditions.textToBePresentInElementValue(UIMappingSingleton.ui(elementLocator), text));
+    }
+
+    /**
+     * An expectation for checking that an element is present on the DOM of a page and visible.
+     * Visibility means that the element is not only displayed but also has a height and width that is greater than 0.
+     * Advantages of this method over isElementPresent(By elementLocator); is that it expects the appearance of an element.
+     */
+    public void waitForElementPresent(String elementLocator) {
+        log.info("*Start TO* Wait For Element _" + elementLocator + "_ Present");
+        waitForElement.until(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+    }
+
+    public void waitForElementDisappear(String elementLocator) {
+        log.info("*Start TO* Wait For Element _" + elementLocator + "_ Present");
+        waitForElement.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator))));
+    }
+
+    /**
+     * An expectation for checking that an element is present on the DOM of a
+     * page. This does not necessarily mean that the element is visible.
+     *
+     * @param elementLocator used to find the element
+     */
+    public void waitForPresenceOfElementLocated(String elementLocator) {
+        log.info("*Start TO* Wait For Presence Of Element Located _" + elementLocator + "_");
+        waitForElement.until(ExpectedConditions.presenceOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+    }
+
+    /**
+     * An expectation for checking an element is visible and enabled such that you
+     * can click it.
+     *
+     * @param elementLocator used to find the element
+     */
+    public void waitForElementToBeClickable(String elementLocator) {
+        log.info("*Start TO* Wait For Element _" + elementLocator + "_ To Be Clickable");
+        waitForElement.until(ExpectedConditions.elementToBeClickable(UIMappingSingleton.ui(elementLocator)));
+    }
+
+    /**
+     * An expectation for checking that an element is becomes invisible, but stay on the DOM.
+     */
+    public void waitForInvisibilityOfElement(String elementLocator) {
+        log.info("*Start TO* Wait For Invisibility Of Element _" + elementLocator + "_ ");
+        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+    }
+
+    /**
+     * Wait for invisibility Of Element on page specified time
+     */
+    public void waitForElementNotVisible(String elementLocator, int timeoutInS) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInS);
+
+        log.info("*Start TO* Wait For Element Not Visible _" + elementLocator + "_");
+
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+    }
+
+    /**
+     * Wait for invisibility Of Element on page
+     */
+    public void waitForElementNotVisible(String elementLocator) {
+        log.info("*Start TO* Wait For Element Not Visible _" + elementLocator + "_");
+        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+    }
+
+
 }
 
 
