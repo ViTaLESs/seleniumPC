@@ -1,0 +1,26 @@
+Week Topics:
+
+	1. Git
+
+
+Home tasks:
+
+1. Develop tests for the Login, Registration and Product detail page(PDP)
+
+2. Also you can use git course on codecademy: https://www.codecademy.com/learn/learn-git
+
+3. Create account on github, and push you project on git hub (send me link to your projects)
+
+Read / watch
+
+    Git
+    https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+    https://try.github.io/levels/1/challenges/1
+    https://www.atlassian.com/git/tutorials/
+    https://git-scm.com/book/en/v2
+    http://www.ex.ua/79601047
+
+    Git map - https://drive.google.com/file/d/0Bzh6QHLIFmHrMFdXbDdGUHdsdDQ/view?usp=sharing
+
+Youtube:
+https://youtu.be/fs9U3gd8LeM

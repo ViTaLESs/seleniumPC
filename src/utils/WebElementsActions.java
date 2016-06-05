@@ -30,8 +30,8 @@ public class WebElementsActions {
         driver.get(siteURL);
     }
 
-    public void clickElement(String elementLocator) {
-        driver.findElement(By.xpath(elementLocator)).click();
+    public void clickElement(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(elementLocator)).click();
     }
 
     /**
@@ -144,20 +144,20 @@ public class WebElementsActions {
     /**
      *Methods for pressing the keypad buttons
      */
-    public void pressSpaceKey(String inputLocator) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(Keys.SPACE);
+    public void pressSpaceKey(String inputLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(Keys.SPACE);
     }
 
-    public void pressEnterKey(String inputLocator) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(Keys.ENTER);
+    public void pressEnterKey(String inputLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(Keys.ENTER);
     }
 
-    public void pressESCAPEKey(String inputLocator) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(Keys.ESCAPE);
+    public void pressESCAPEKey(String inputLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(Keys.ESCAPE);
     }
 
-    public void pressPageUp(String inputLocator) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(Keys.PAGE_UP);
+    public void pressPageUp(String inputLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(Keys.PAGE_UP);
     }
 
 
@@ -190,8 +190,8 @@ public class WebElementsActions {
      * This method is used to do Focus to Element And Click
      * Use Actions class
      */
-/*    public void doFocusToElementAndClick(String focusElementLocator, String elementLocator) {
-        new Actions(driver.getOriginalDriver()).moveToElement(getElement(focusElementLocator)).perform();
+    public void doFocusToElementAndClick(String focusElementLocator, String elementLocator) throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
+        new Actions(driver).moveToElement(getElement(focusElementLocator)).perform();
         log.info("Focus in to element" + focusElementLocator);
 
         driver.switchTo();
@@ -199,38 +199,37 @@ public class WebElementsActions {
         if (isElementPresent(elementLocator)) {
             clickButton(elementLocator);
         }
-    }*/
-
-
-    public WebElement getElement(String elementLocator) {
-        return driver.findElement(By.xpath(elementLocator));
-    }
-
-    public List<WebElement> getElements(String elementsLocator) {
-        return driver.findElements(By.xpath(elementsLocator));
     }
 
 
-    public String getElementText(String elementsLocator) {
-        return driver.findElement(By.xpath(elementsLocator)).getText();
+    public WebElement getElement(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        return driver.findElement(ConfigData.ui(elementLocator));
+    }
+
+    public List<WebElement> getElements(String elementsLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        return driver.findElements(ConfigData.ui(elementsLocator));
+    }
+
+
+    public String getElementText(String elementsLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        return driver.findElement(ConfigData.ui(elementsLocator)).getText();
     }
 
     /**
      * Insert value into text input HTML field without Clean
      */
-    public void inputWithoutClean(String inputLocator, String inputData) {
-        driver.findElement(By.xpath(inputLocator)).sendKeys(inputData);
-        //log.info("Input in " + inputLocator + ", value - " + inputData);
+    public void inputWithoutClean(String inputLocator, String inputData) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        driver.findElement(ConfigData.ui(inputLocator)).sendKeys(inputData);
+        log.info("Input in " + inputLocator + ", value - " + inputData);
     }
 
 
     /**
      * Select value from drop down list
      */
-    public void selectFromList(String listLocator, String listValue) {
-        new Select(driver.findElement(By.xpath(listLocator))).selectByValue(listValue);
+    public void selectFromList(String listLocator, String listValue) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
+        new Select(driver.findElement(ConfigData.ui(listLocator))).selectByValue(listValue);
     }
-
     /**
      * Wait the text in the element value specified time
      */
@@ -242,12 +241,12 @@ public class WebElementsActions {
     /**
      * Wait the text in the element (value tag!) specified time
      */
-    public void waitTextPresentInElementValue(String elementLocator, int timeoutInS, String text) {
+    public void waitTextPresentInElementValue(String elementLocator, int timeoutInS, String text) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInS);
 
         log.info("*Start TO* Wait For Text Present In Element _" + elementLocator + "_ Value");
 
-        wait.until(ExpectedConditions.textToBePresentInElementValue(UIMappingSingleton.ui(elementLocator), text));
+        wait.until(ExpectedConditions.textToBePresentInElementValue(ConfigData.ui(elementLocator), text));
     }
 
     /**
@@ -255,14 +254,14 @@ public class WebElementsActions {
      * Visibility means that the element is not only displayed but also has a height and width that is greater than 0.
      * Advantages of this method over isElementPresent(By elementLocator); is that it expects the appearance of an element.
      */
-    public void waitForElementPresent(String elementLocator) {
+    public void waitForElementPresent(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Element _" + elementLocator + "_ Present");
-        waitForElement.until(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        waitForElement.until(ExpectedConditions.visibilityOfElementLocated(ConfigData.ui(elementLocator)));
     }
 
-    public void waitForElementDisappear(String elementLocator) {
+    public void waitForElementDisappear(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Element _" + elementLocator + "_ Present");
-        waitForElement.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator))));
+        waitForElement.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(ConfigData.ui(elementLocator))));
     }
 
     /**
@@ -271,9 +270,9 @@ public class WebElementsActions {
      *
      * @param elementLocator used to find the element
      */
-    public void waitForPresenceOfElementLocated(String elementLocator) {
+    public void waitForPresenceOfElementLocated(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Presence Of Element Located _" + elementLocator + "_");
-        waitForElement.until(ExpectedConditions.presenceOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        waitForElement.until(ExpectedConditions.presenceOfElementLocated(ConfigData.ui(elementLocator)));
     }
 
     /**
@@ -282,36 +281,36 @@ public class WebElementsActions {
      *
      * @param elementLocator used to find the element
      */
-    public void waitForElementToBeClickable(String elementLocator) {
+    public void waitForElementToBeClickable(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Element _" + elementLocator + "_ To Be Clickable");
-        waitForElement.until(ExpectedConditions.elementToBeClickable(UIMappingSingleton.ui(elementLocator)));
+        waitForElement.until(ExpectedConditions.elementToBeClickable(ConfigData.ui(elementLocator)));
     }
 
     /**
      * An expectation for checking that an element is becomes invisible, but stay on the DOM.
      */
-    public void waitForInvisibilityOfElement(String elementLocator) {
+    public void waitForInvisibilityOfElement(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Invisibility Of Element _" + elementLocator + "_ ");
-        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(ConfigData.ui(elementLocator)));
     }
 
     /**
      * Wait for invisibility Of Element on page specified time
      */
-    public void waitForElementNotVisible(String elementLocator, int timeoutInS) {
+    public void waitForElementNotVisible(String elementLocator, int timeoutInS) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInS);
 
         log.info("*Start TO* Wait For Element Not Visible _" + elementLocator + "_");
 
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(ConfigData.ui(elementLocator)));
     }
 
     /**
      * Wait for invisibility Of Element on page
      */
-    public void waitForElementNotVisible(String elementLocator) {
+    public void waitForElementNotVisible(String elementLocator) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         log.info("*Start TO* Wait For Element Not Visible _" + elementLocator + "_");
-        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        waitForElement.until(ExpectedConditions.invisibilityOfElementLocated(ConfigData.ui(elementLocator)));
     }
 
 
