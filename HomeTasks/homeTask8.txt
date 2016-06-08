@@ -1,0 +1,29 @@
+Week Topics:
+
+    1. JUnit:
+        - annotations
+        - hierarchy of framework
+        - the execution order of tests
+        - assertions
+
+
+Home tasks:
+
+1. Cover tests login, registration, product page
+2. Review all examples in the training proj (about JUnit) - https://github.com/barancev/junit_samples
+3. Add asserts and create suite runner
+
+
+Read / watch
+
+    JUnit
+    https://www.youtube.com/watch?v=QJZb1fNYh9c
+	http://junit.org/
+	http://www.tutorialspoint.com//junit/index.htm
+
+	JUnit map - https://drive.google.com/file/d/0Bzh6QHLIFmHrbFRNQXVLakJJN2c/view?usp=sharing
+
+
+Youtube:
+Day7 https://youtu.be/x-cRBuuQHSs
+Day8 https://youtu.be/u9OV4Jzq_IQ
