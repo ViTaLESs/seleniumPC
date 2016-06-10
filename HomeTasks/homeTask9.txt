@@ -1,0 +1,58 @@
+Topics:
+
+    1. JUnit:
+        - annotations
+        - hierarchy of framework
+        - the execution order of tests
+        - assertions
+
+    2. Practise
+
+    3. TestNG:
+        - annotations
+        - hierarchy of framework
+        - the execution order of tests
+        - assertions
+    (will continue on next lesson)
+
+
+Home tasks:
+
+1. Cover tests login, registration, product page and add to basket functions
+
+
+
+Read / watch
+
+    JUnit
+    https://www.youtube.com/watch?v=QJZb1fNYh9c
+	http://junit.org/
+	http://www.tutorialspoint.com//junit/index.htm
+
+	TestNG
+    https://www.youtube.com/watch?v=QqvaT0t2jOs&list=PLp18Zf576nRJMlHo_BEscqlNzRGosQnQo
+	http://testng.org/doc/index.html
+	http://www.tutorialspoint.com/testng/
+
+	JUnit map - https://drive.google.com/file/d/0Bzh6QHLIFmHrbFRNQXVLakJJN2c/view?usp=sharing
+	TestNG map - https://drive.google.com/file/d/0Bzh6QHLIFmHrTUt5VTkyaG82dWs/view?usp=sharing
+
+		How run test suite in JUnit
+			package trainings.junit.simple1.sample7;
+			package trainings.junit.simple1.sample8;
+
+		How run test suite in TestNG
+			trainings.testng.simple1.sample9;
+			trainings.testng.simple1.sample10;
+
+
+Youtube:
+Day7 https://youtu.be/x-cRBuuQHSs
+Day8 https://youtu.be/u9OV4Jzq_IQ
+Day9 https://youtu.be/bZB9SSW1dek
+
+
+
+
+
+
