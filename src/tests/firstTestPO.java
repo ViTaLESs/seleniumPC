@@ -7,8 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
+import pages.ProductPage;
 import utils.WebElementsActions;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -49,7 +51,7 @@ public class firstTestPO {
 
 
     @Test
-    public void digitarTexto() {
+    public void digitarTexto() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 
         inputNome.sendKeys("Diego");
         inputIdade5.sendKeys("29");
@@ -58,6 +60,12 @@ public class firstTestPO {
         inputIdade5.sendKeys("29");
         inputIdade5.sendKeys("29");
         //...
+
+
+        ProductPage productPage = new ProductPage(driver);
+        productPage.clickOnSizeDD();
+        productPage.checkDDLabelsPresent();
+
     }
 
 

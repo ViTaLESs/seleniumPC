@@ -19,7 +19,7 @@ Topics:
 Home tasks:
 
 1. Cover tests login, registration, product page and add to basket functions
-
+2. Rewrite all your tests for testNG!
 
 
 Read / watch
@@ -46,11 +46,16 @@ Read / watch
 			trainings.testng.simple1.sample10;
 
 
+Samples projects
+https://github.com/barancev/testng_samples
+https://github.com/barancev/junit_samples
+
+
 Youtube:
 Day7 https://youtu.be/x-cRBuuQHSs
 Day8 https://youtu.be/u9OV4Jzq_IQ
 Day9 https://youtu.be/bZB9SSW1dek
-
+Day10 https://youtu.be/vlWZGk3ab7A
 
 
 
