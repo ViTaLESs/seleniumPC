@@ -1,0 +1,57 @@
+Week Topics:
+
+    1. TestNG:
+        - priority
+        - groups
+        - @BeforeGroups
+        - HardDependencies
+		- SoftDependencies
+		- dependsOnMethods
+		- Assertions
+		- @Parameters
+		- @DataProvider
+
+
+	2. Maven
+		- OS variables: JAVA_HOME, M2_HOME
+		- archetype
+		- how to create maven project
+		- folder structure
+		- pom.xml (dependencies, plugins)
+		- lifecycle
+		- goals
+		- mvn ant:ant
+
+
+Home tasks:
+
+1. Create NEW Maven project or move all your classes to new maven project
+2. Complete all tests for next functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	As result you must have 5 test class with test methods!
+
+Addition task for nerd:
+*3. All tests must be covered by logs and screens.
+
+
+Read / watch
+
+	TestNG
+    http://testng.org/doc/index.html
+
+	Maven
+	http://maven.apache.org/
+	http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
+	http://mvnrepository.com/artifact/org.apache.maven.plugins
+
+	TestNG map - https://drive.google.com/file/d/0Bzh6QHLIFmHrTUt5VTkyaG82dWs/view?usp=sharing
+	Maven map - https://drive.google.com/file/d/0Bzh6QHLIFmHrSFJqMVVhVEk1cXM/view?usp=sharing
+
+
+Youtube:
+Day11 - https://youtu.be/CM8TV-Xdtts
+
