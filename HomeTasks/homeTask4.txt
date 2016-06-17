@@ -20,8 +20,8 @@ Topics:
 Home tasks:
 
 1. Put all locators to UIMapping.properties
-2. Add logging to utils.WebElementsActions class and rewrite all methods using utils.ConfigData.ui method
-3. Refactor utils.ConfigData class (do better as you can)
+2. Add logging to utils.WebElementsActions class and rewrite all methods using utils.UIMappingSingleton.ui method
+3. Refactor utils.UIMappingSingleton class (do better as you can)
 4. Prepare story about Exception
 5. Fix bug in positiveLogin method
 

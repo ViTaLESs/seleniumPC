@@ -1,0 +1,40 @@
+Week Topics:
+
+	1. Wrappers
+       		- PropertyLoader
+       		- ClassName
+       		- Page(basic class for all pages)
+       		- Ellos(container class)
+       		- WebDriverWrapper
+       		- WebFactory(driver initialization class)
+       		- Log4j
+       		- ScreenShotMaker
+
+
+Home tasks:
+
+1. Delete all exceptions(web, pages, tests) and switch to UIMappingSingleton
+2. All pages must to extends of Page class(update constructors)
+3. Run ONLY testNG xml (for my proj its work only in this way)
+4. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	As result you must have 5 test class with test methods!
+
+
+
+Read / watch
+
+Jenkins:
+https://www.youtube.com/watch?v=XY-ZB3FRnxw
+https://www.youtube.com/watch?v=lTQGi5jzjvo
+https://www.youtube.com/watch?v=RR0LabeUQ88
+
+Youtube:
+Day12 https://youtu.be/OXN7sZYOEDs
+
+Maven map - https://drive.google.com/open?id=0Bzh6QHLIFmHrNFlHUnpWcFVYbnc
+Wrappers map - https://drive.google.com/file/d/0Bzh6QHLIFmHrWU5qMkRFZE9wenM/view?usp=sharing
