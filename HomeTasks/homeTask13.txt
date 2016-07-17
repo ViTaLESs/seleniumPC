@@ -1,0 +1,30 @@
+Week Topics:
+
+	1. Selenium Grid
+
+
+Home tasks:
+
+1. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	- my cabinet page;
+	As result you must have 6 test class with test methods!
+2. Try to run tests on Selenium Grid
+3. Look at isElementPresent and change all your methods according to this
+
+
+Youtube:
+https://youtu.be/x0hVqZXaM-M
+https://youtu.be/vzq5BEOfd3U
+
+
+Selenium Grid map - https://drive.google.com/open?id=0Bzh6QHLIFmHrREhZSDk1M2dQWEU
+
+Look at code: https://github.com/Invenbeetl/borysEllosTest.git
+
+
+
