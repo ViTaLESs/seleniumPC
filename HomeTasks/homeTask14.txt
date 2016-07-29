@@ -1,0 +1,65 @@
+Week Topics:
+
+	1. Selenium Grid
+	2. Cucumber
+
+
+Home tasks:
+
+1. Complete all tests for next login functions:
+	- login;
+	- registration;
+	- product page;
+	- add product to basket;
+	- checkout page;
+	- my cabinet page;
+	As result you must have 6 test class with test methods!
+2. Try to run tests with cucumber
+
+
+
+Read / watch
+
+Cucumber project you can find in:
+https://github.com/ViTaLESs/ACQ2Cucumber
+
+Cucumber
+https://www.youtube.com/playlist?list=PL_noPv5wmuO_t6yYbPfjwhJFOOcio89tI
+
+Selenium Grid
+Instruction:
+https://github.com/SeleniumHQ/selenium/wiki/Grid2
+
+Config files:
+https://github.com/SeleniumHQ/selenium/blob/master/java/server/src/org/openqa/grid/common/defaults/DefaultHub.json
+https://github.com/SeleniumHQ/selenium/blob/master/java/server/src/org/openqa/grid/common/defaults/DefaultNode.json
+
+http://internetka.in.ua/junit-tests-parallel/
+
+DesiredCapabilities
+https://code.google.com/p/selenium/wiki/DesiredCapabilities
+https://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/remote/DesiredCapabilities.html
+
+Video of previous Grid lectures:
+https://youtu.be/-VAdTAepef4
+https://youtu.be/6VoT3F1y06Y
+
+Link to Last one lecture I will send you to skype!
+
+Cucumber map - https://drive.google.com/file/d/0Bzh6QHLIFmHrdVBnQTRZdjlvakk/view?usp=sharing
+Tips and tricks map - https://drive.google.com/file/d/0Bzh6QHLIFmHrYUtJSGx4Tm9EY3c/view?usp=sharing
+
+
+What questions you need to prepare for a job interview:
+1. Java, repeat OOP course (all)
+2. Basic Selenium WD commands (classes Action, Select..) + Locators
+3. JUnit\TestNG fixture
+4. Maven - dependencies, life cycle
+5. Git - basik commands
+6. Jenkins - job creation
+
+
+Youtube:
+https://youtu.be/x0hVqZXaM-M
+https://youtu.be/vzq5BEOfd3U
+
